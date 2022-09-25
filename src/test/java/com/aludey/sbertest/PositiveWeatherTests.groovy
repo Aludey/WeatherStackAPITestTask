@@ -11,7 +11,7 @@ import static io.qameta.allure.Allure.step
 class PositiveWeatherTests extends BaseAPITest {
 
     @Unroll("Check weather and location info in #city city")
-    def "requestCurrentWeatherTest"() {
+    def requestCurrentWeatherTest() {
 
         when:
         step"Get current information in city from API Request"
@@ -63,7 +63,10 @@ class PositiveWeatherTests extends BaseAPITest {
         "Saint Petersburg"   | "9"                 | "3.0"             | getDateAndTimeViaUTCOffset(3)  | "Russia"                   | isDay(3)         | "11"              | "1007"
         "Beijing"            | "15"                | "8.0"             | getDateAndTimeViaUTCOffset(8)  | "China"                    | isDay(8)         | "4"               | "1014"
         "Tokyo"              | "22"                | "9.0"             | getDateAndTimeViaUTCOffset(9)  | "Japan"                    | isDay(9)         | "13"              | "1017"
+    }
 
+    def requestCurrentWeatherInCity(String city) {
+        return requestWithFunctionAndParameters("current", "&query=" + city)
     }
 
     def isDay(int utcOffset) {

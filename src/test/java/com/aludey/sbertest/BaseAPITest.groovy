@@ -8,12 +8,11 @@ import spock.lang.Specification
 
 class BaseAPITest extends Specification {
 
-    final String accessKey = "d6cc6c38939008842b1fb19c87e6287f"
-    final String baseURL = "http://api.weatherstack.com/"
+    private static final String accessKey = "d6cc6c38939008842b1fb19c87e6287f"
+    static final String baseURL = "http://api.weatherstack.com/"
 
-    def requestCurrentWeatherInCity(String city) {
+    def requestWithOnlyURL(URL url) {
         StringBuilder result = new StringBuilder()
-        URL url = new URL(baseURL + "current?access_key=" + accessKey + "&query=" + city)
         try {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection()
             connection.setRequestProperty("accept", "application/json")
@@ -33,7 +32,25 @@ class BaseAPITest extends Specification {
         }
     }
 
+    def requestWithFunctionAndParameters(String function, String parameters) {
+        URL url = new URL(baseURL + function + "?access_key=" + accessKey + parameters)
+        return requestWithOnlyURL(url)
+    }
+
     def findInString(String whatToParse, String whatToFind) {
+        try {
+            JSONParser jsonParser = new JSONParser()
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(whatToParse)
+
+            return jsonObject.get(whatToFind).toString()
+
+        } catch (ParseException e) {
+            e.printStackTrace()
+            return ""
+        }
+    }
+
+    def findBooleanInString(String whatToParse, String whatToFind) {
         try {
             JSONParser jsonParser = new JSONParser()
             JSONObject jsonObject = (JSONObject) jsonParser.parse(whatToParse)
