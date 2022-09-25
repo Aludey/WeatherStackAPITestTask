@@ -49,17 +49,4 @@ class BaseAPITest extends Specification {
             return ""
         }
     }
-
-    def findBooleanInString(String whatToParse, String whatToFind) {
-        try {
-            JSONParser jsonParser = new JSONParser()
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(whatToParse)
-
-            return jsonObject.get(whatToFind).toString()
-
-        } catch (ParseException e) {
-            e.printStackTrace()
-            return ""
-        }
-    }
 }
