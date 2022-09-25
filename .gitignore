@@ -32,6 +32,9 @@ buildNumber.properties
 # Allure
 allure-results/
 
+# Spock-Reports
+build/spock-reports
+
 # Compiled class file
 *.class
 
