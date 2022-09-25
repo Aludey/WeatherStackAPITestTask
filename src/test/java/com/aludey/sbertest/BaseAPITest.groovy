@@ -8,7 +8,7 @@ import spock.lang.Specification
 
 class BaseAPITest extends Specification {
 
-    private static final String accessKey = "d6cc6c38939008842b1fb19c87e6287f"
+    private static final String accessKey = "9c1369f431be74f40b6072213d33c3c6"
     static final String baseURL = "http://api.weatherstack.com/"
 
     def requestWithOnlyURL(URL url) {
