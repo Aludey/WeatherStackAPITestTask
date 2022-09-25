@@ -59,10 +59,10 @@ class PositiveWeatherTests extends BaseAPITest {
         where:
         city                 | expectedTemperature | expectedUTCOffset | expectedLocalTime              | expectedCountry            | expectedDaySatus | expectedWindSpeed | expectedPressure
         "New York"           | "18"                | "-4.0"            | getDateAndTimeViaUTCOffset(-4) | "United States of America" | isDay(-4)        | "15"              | "1009"
-       // "London"             | "15"                | "1.0"             | getDateAndTimeViaUTCOffset(1)  | "United Kingdom"           | isDay(1)         | "13"              | "1018"
-       // "Saint Petersburg"   | "9"                 | "3.0"             | getDateAndTimeViaUTCOffset(3)  | "Russia"                   | isDay(3)         | "11"              | "1007"
-       // "Beijing"            | "15"                | "8.0"             | getDateAndTimeViaUTCOffset(8)  | "China"                    | isDay(8)         | "4"               | "1014"
-       // "Tokyo"              | "22"                | "9.0"             | getDateAndTimeViaUTCOffset(9)  | "Japan"                    | isDay(9)         | "13"              | "1017"
+        "London"             | "15"                | "1.0"             | getDateAndTimeViaUTCOffset(1)  | "United Kingdom"           | isDay(1)         | "13"              | "1018"
+        "Saint Petersburg"   | "9"                 | "3.0"             | getDateAndTimeViaUTCOffset(3)  | "Russia"                   | isDay(3)         | "11"              | "1007"
+        "Beijing"            | "15"                | "8.0"             | getDateAndTimeViaUTCOffset(8)  | "China"                    | isDay(8)         | "4"               | "1014"
+        "Tokyo"              | "22"                | "9.0"             | getDateAndTimeViaUTCOffset(9)  | "Japan"                    | isDay(9)         | "13"              | "1017"
 
     }
 
