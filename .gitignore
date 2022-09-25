@@ -29,6 +29,9 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
+# Allure
+allure-results/
+
 # Compiled class file
 *.class
 
