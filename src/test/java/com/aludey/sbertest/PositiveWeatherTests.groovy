@@ -72,7 +72,7 @@ class PositiveWeatherTests extends BaseAPITest {
     def isDay(int utcOffset) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH")
         def time = dtf.format(OffsetDateTime.now(ZoneOffset.ofHours(utcOffset))).toString() as int
-        if (time < 8 || time > 20) return "no"
+        if (time < 7 || time > 17) return "no"
         else return "yes"
     }
 
