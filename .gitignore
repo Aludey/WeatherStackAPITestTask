@@ -29,6 +29,13 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
+# Allure
+allure-results/
+allure-report/
+
+# Spock-Reports
+build/spock-reports
+
 # Compiled class file
 *.class
 
